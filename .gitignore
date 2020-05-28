@@ -1,23 +1,32 @@
-# Compiled class file
-*.class
+*/This program allows you to view files*/
+import java.util.*;
+import java.io.*;
+import javax.swing.*;
 
-# Log file
-*.log
-
-# BlueJ files
-*.ctxt
-
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Package Files #
-*.jar
-*.war
-*.nar
-*.ear
-*.zip
-*.tar.gz
-*.rar
-
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+public class files
+{
+    public static void main(String [] args) throws FileNotFoundException
+    {
+        Scanner inTxt = new Scanner(new file("file.txt"));
+        while (inTxt.hasNext())
+        {
+            String text = inTxt.nextLine();
+            System.out.println(text);
+        }
+        JFileChooser chooser = new JFileChooser();
+        Scanner inchoose = null;
+        if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION)
+        {
+            File selectedfile = chooser.getSelectedFile();
+            inchoose = new Scanner(selectedfile);
+        }
+        PrintWriter out = new Printwriter("file.txt");
+        while (inchoose.hasNext())
+        {
+            String text2 = inchoose.nextLine();
+            out.println(text2);
+            System.out.println(text2);
+        }
+        out.close();
+    }
+}
