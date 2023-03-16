@@ -2,15 +2,6 @@ import javax.swing.*;
 import java.awt.event.*;
 
 public class Temperature_converter {
-
-    public static double Tofarenheit(double celsius) {
-        return (celsius * (double)(5/9)) + 32;
-    }
-
-    public static double Tocelsius(double farenheit) {
-        return (farenheit - 32) * (double)(5/9);
-    }
-
     public static void main(String [] args) {
         JFrame frame = new JFrame();
         frame.setVisible(true);
@@ -47,5 +38,15 @@ public class Temperature_converter {
             }
         });
         frame.add(convert);
+    }
+
+    public static double Tofarenheit(double celsius) {
+        double x = 5.0/9.0;
+        return (celsius * x) + 32;
+    }
+
+    public static double Tocelsius(double farenheit) {
+        double x = 5.0/9.0;
+        return (farenheit - 32) * x;
     }
 }
